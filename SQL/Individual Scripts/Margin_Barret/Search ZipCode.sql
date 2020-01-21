@@ -1,0 +1,1 @@
+SELECT ZipCodeID, City, [State], County FROM ZipCode WHERE ZipCodeID = 78413;

@@ -1,0 +1,8 @@
+CREATE TABLE [Address] (
+ AddressID int NOT NULL IDENTITY(1,1),
+ StreetAddress varchar(50) NOT NULL,
+ ZipCodeID int NOT NULL,
+ CONSTRAINT PK_Address PRIMARY KEY (AddressID),
+ CONSTRAINT FK_ZipCode FOREIGN KEY (ZipCodeID) REFERENCES ZipCode(ZipCodeID) ON UPDATE CASCADE,
+
+);

@@ -1,0 +1,14 @@
+CREATE TABLE Client (
+ ClientID int NOT NULL IDENTITY(1,1),
+ FirstName varchar(25) NOT NULL,
+ LastName varchar(25) NOT NULL,
+ AddressID int NOT NULL,
+ PhoneNumberID int NOT NULL,
+ ClientDomainID int NOT NULL,
+ Email varchar(50) NOT NULL,
+ TempClient bit NOT NULL,
+ CONSTRAINT PK_Client PRIMARY KEY (ClientID),
+ CONSTRAINT FK_Address FOREIGN KEY (AddressID) REFERENCES [Address](AddressID) ON DELETE CASCADE ON UPDATE CASCADE,
+ CONSTRAINT FK_PhoneNumber FOREIGN KEY (PhoneNumberID) REFERENCES PhoneNumber(PhoneNumberID) ON DELETE CASCADE ON UPDATE CASCADE,
+ CONSTRAINT FK_ClientDomain FOREIGN KEY (ClientDomainID) REFERENCES ClientDomain(ClientDomainID) ON DELETE CASCADE ON UPDATE CASCADE,
+);

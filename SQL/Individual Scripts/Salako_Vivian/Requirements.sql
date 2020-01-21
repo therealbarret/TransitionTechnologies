@@ -1,0 +1,2 @@
+SELECT [Services].Services_Description, [Services].ClientID, [Services].WebsiteJobID, [Services].GraphicDesignJobID, Requirements, Program FROM [Services]
+INNER JOIN Requirements ON [Services].ServicesID = Requirements.ServicesID
